@@ -1,8 +1,8 @@
-# 📰 외부 API를 현동하여 뉴스 뷰어 만들기
-> newsapi에서 API키를 발급받아 사용하였음
-> __Install__
->> react-router-dom@5
->> axios
+# 📰 외부 API를 연동하여 뉴스 뷰어 만들기
+> newsapi에서 API키를 발급받아 사용하였음 <br>
+> ## __Install__
+>> react-router-dom@5 <br>
+>> axios <br>
 >> styled-components
 
  *** 
