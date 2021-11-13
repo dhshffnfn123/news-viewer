@@ -1,8 +1,9 @@
 # 📰 외부 API를 현동하여 뉴스 뷰어 만들기
-<<<<<<< HEAD
 > newsapi에서 API키를 발급받아 사용하였음
-
-
+> __Install__
+>> react-router-dom@5
+>> axios
+>> styled-components
 
  *** 
 ## axios.get

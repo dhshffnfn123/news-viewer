@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
+// useEffect를 사용하여 처음 렌더링 될 때, 그리고 category값이 바뀔 때 요청하도록 설정하였다.
 import styled from "styled-components";
 import NewsItem from "./NewsItem";
 import axios from "axios";
@@ -23,7 +24,7 @@ const sampleArticle = {
     urlToImage: 'https://via.placeholder.com/160',
 };
 
-const NewsList = () => {
+const NewsList = ({ category }) => {
     const [articles, setArticles] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -32,8 +33,9 @@ const NewsList = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
+                const query = category === 'all' ? '' : `&category=${category}`;
                 const response = await axios.get(
-                    'https://newsapi.org/v2/top-headlines?country=kr&apiKey=b5aee5a2926440d0a34450fa1ba10ae4',
+                    `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b5aee5a2926440d0a34450fa1ba10ae4`,
                 );
                 setArticles(response.data.articles);
             } catch(e) {
@@ -42,7 +44,7 @@ const NewsList = () => {
             setLoading(false);
         };
         fetchData();
-    },[]);
+    },[category]);
 
     // 대기 중
     if (loading) {
