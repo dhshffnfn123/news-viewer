@@ -37,7 +37,7 @@ const NewsList = ({ category }) => {
     if (loading) {
         return <NewsListBlock>대기 중...</NewsListBlock>;
     }
-    // 아직 articles 값이 설정되지 않았을 때
+    // 아직 response 값이 설정되지 않았을 때
     if (!response) {
         return null;
     }
